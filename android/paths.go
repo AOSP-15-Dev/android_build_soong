@@ -1218,7 +1218,7 @@ func PathForSource(ctx PathContext, pathComponents ...string) SourcePath {
 // PathForSourceRelaxed joins the provided path components.  Unlike PathForSource,
 // the result is allowed to exist outside of the source dir.
 // On error, it will return a usable, but invalid SourcePath, and report a ModuleError.
-func PathForSourceRelaxed(ctx PathContext, pathComponents ...string) SourcePath {
+func PathForSourceRelaxed(ctx PathGlobContext, pathComponents ...string) SourcePath {
 	path, err := pathForSourceRelaxed(ctx, pathComponents...)
 	if err != nil {
 		reportPathError(ctx, err)
